@@ -48,10 +48,19 @@ class TaskForm extends Component {
     const { title, description } = this.state;
     return (
       <form className="task-form" onSubmit={this.onSubmit}>
-        <input name="title"  placeholder="Enter task title" type="text" value={title} onChange={this.onChange} required/>
-        <input name="description" placeholder="Enter task description" type="text" value={description} onChange={this.onChange} required />
-        <button>Submit</button>
-        <button id="reset-btn" type="button" onClick={this.resetForm}>Reset</button>
+     <div className="field">
+     <div className="control">   <input name="title" className="input"  placeholder="Enter task title" type="text" value={title} onChange={this.onChange} required/></div></div>
+     <div className="field">
+     <div className="control">   <input name="description" className="input" placeholder="Enter task description" type="text" value={description} onChange={this.onChange} required /></div></div>
+     <div class="field is-grouped">
+  <div class="control">
+  <button id="submit-btn" className="button is-primary">Submit</button>
+  </div>
+  <div class="control">
+  <button id="reset-btn" type="button" onClick={this.resetForm}>Reset</button>
+  </div>
+</div>
+       
       </form>
     );
   }

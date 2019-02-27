@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import Task from './components/Task';
-import TaskForm from './containers/TaskForm/TaskForm';
+import TaskForm from './containers/TaskForm'
 import Toggle from './containers/Toggle';
 import Portal from './containers/Portal';
 import saveTasksToLS from './utilities/saveTasksToLS';
-import './App.css';
 
+import 'bulma'
 class App extends Component {
   state = {
     editTask: null,
@@ -78,7 +78,7 @@ class App extends Component {
   };
   render() {
     return (
-      <div className="App">
+      <div className="section">
         <div>
           <Toggle>
             {({ on, toggle }) => (
@@ -88,7 +88,7 @@ class App extends Component {
                     <TaskForm addTask={this.addTask} closeToggle={toggle} />
                   </Portal>
                 )}
-                <button id="btn-add" onClick={toggle}>{on ? 'Close' : 'Open'}</button>
+                <button id="open-form-btn" className="button" onClick={toggle}>{on ? 'Close' : 'Open'}</button>
               </>
             )}
           </Toggle>
